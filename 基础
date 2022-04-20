@@ -1,1 +1,13 @@
+new一个实例都发生了什么
+function _new (fn,args) {
+  let obj = {};
+  obj._proto_ = fn.prototype;
+  let res = fn.apply(obj,args);
+  return Object.prototype.call.toString(res) === "[object,object]" ? res : obj;
+}
+1. 创建一个控对象
+2. 将对象的_proto_指向构造函数的prototype
+3. 执行构造函数将this指向新对象
+4. 如果原始对象或构造函数有返回值且为对象直接返回否则返回obj
 
+https://xie.infoq.cn/article/3767706419c668c9b5e671717
