@@ -1,0 +1,4 @@
+BFC是什么block formatting context块级格式化上下文
+解决什么？ margin塌陷问题
+怎么解决？ overflow:hidden
+延伸： FC => IFC GFC FFC
